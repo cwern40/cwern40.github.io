@@ -737,6 +737,19 @@ input, select, textarea {
 					padding-top: 0;
 				}
 
+			ul.columns {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			ul.columns li.three {
+				width: 32%;
+			}
+			
+			ul.columns li.two {
+				width: 50%;
+			}
+
 	dl {
 		margin: 0 0 2rem 0;
 	}
