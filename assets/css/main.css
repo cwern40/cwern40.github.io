@@ -702,6 +702,10 @@ input, select, textarea {
 
 /* List */
 
+	.project-description li {
+		list-style-type: circle;
+	}
+
 	ol {
 		list-style: decimal;
 		margin: 0 0 2rem 0;
