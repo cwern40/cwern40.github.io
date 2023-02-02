@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://chriswernli.com/sitemap.xml
