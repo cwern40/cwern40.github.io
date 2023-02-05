@@ -36,11 +36,8 @@
 			}
 		</script>
 		<script src="https://www.google.com/recaptcha/api.js"></script>
-		<script>
-			function onSubmit(token) {
-			  document.getElementById("contact-form").submit();
-			}
-		  </script>
+		<script src="assets/js/recaptcha.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -251,7 +248,8 @@
 							<article id="contact">
 								<h2 class="major">Contact</h2>
 								<p>You can email me at chris.wernli40@gmail.com or you can fill out the form below.</p>
-								<form method="POST" action="https://formspree.io/maypjoee" id="contact-form">
+								<form  id="contact-form">
+									<!-- method="POST" action="https://formspree.io/maypjoee" -->
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
@@ -538,7 +536,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<div id="bg"></div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
