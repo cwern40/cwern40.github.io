@@ -9,10 +9,38 @@
 		<title>Chris Wernli Portfolio Site</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="My name is Chris Wernli. I am currently a Team Lead in Web Development. Visit my site to download my resume!" />
-		<meta name="keywords" content="web developer, software engineer, coder" />
+		<meta name="description" content="My name is Chris Wernli. I am currently a Team Lead in Web Development. Click here to lean more about me and my work history." />
+		<meta name="keywords" content="web developer, software engineer, coder, full stack" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script type="application/ld+json">
+			{
+			"@context": "https://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "About Me",
+				"item": "https://chriswernli.com/#about"
+			},{
+				"@type": "ListItem",
+				"position": 2,
+				"name": "Resume",
+				"item": "https://chriswernli.com/#resume"
+			},{
+				"@type": "ListItem",
+				"position": 3,
+				"name": "Contact Me",
+				"item": "https://chriswernli.com/#contact"
+			}]
+			}
+		</script>
+		<script src="https://www.google.com/recaptcha/api.js"></script>
+		<script>
+			function onSubmit(token) {
+			  document.getElementById("contact-form").submit();
+			}
+		  </script>
 	</head>
 	<body class="is-preload">
 
@@ -53,7 +81,8 @@
 								<h2 class="major">About</h2>
 								<span class="image main"><img src="images\IMG_2173.JPG" alt="My family" /></span>
 								<p>I graduated college from Brigham Young University with a bachelors degree in Exercise Science. During my time at BYU I also played on the rugby team winning 3 national championships and second team all american honors. After graduating from BYU then I worked at a software company named IDS. That is where I was introduced to coding and realized that is the career I wanted to be. I started to learn to code on my own and after a few months decided to enroll in a program to ensure that I had a strong knowledge base to start with. I chose Lambda school since they had a computer science section to go along with learning web development. After finishing up at Lambda school then I started to do some freelance work for a company name Create Room and shortly after started working as a full stack web developer for NewAge.</p>
-								<p>At NewAge my first project was our convergence project where we converged all partner company websites and systems into one. I mostly focused on the frontend and built the product page, shop page, put together the homepage, many sections of our enrollment process, the many modals in the site, and much more. I also helped customize the site for different global markets and helped create pages and sections in our CMS. Since the project has launched then I have helped maintain the frontend and backend code, fixed bugs, and implemented new market specific features in both the frontend and backend aspects of the site. I have also started on other web application projects that utilize different tech stacks have taken the lead on one of those projects.  </p>
+								<p>At NewAge my first project was our convergence project where we converged all partner company websites and systems into one. I mostly focused on the frontend and built the product page, shop page, put together the homepage, many sections of our enrollment process, the many modals in the site, and much more. I also helped customize the site for different global markets and helped create pages and sections in our CMS. Since the project has launched then I have helped maintain the frontend and backend code, fixed bugs, and implemented new market specific features in both the frontend and backend aspects of the site. I have also started on other web application projects that utilize different tech stacks have taken the lead on one of those projects.</p>
+								<p>I am now a Team Lead in Web Development. My responsiblities include reviewing and approving code. Fixing high priority bugs, working with thrid party API's, improving in house API's, mentoring other developers, and implementing new features in multiple company applications.</p>
 								<p>I currently live in Utah with my wife, Corina, and our three kids, Fox(4), Grey(2), and Magnolia (newborn).
 								</p>
 							</article>
@@ -62,7 +91,7 @@
 							<article id="resume">
 								<h2 class="major">Resume</h2>
 								<span class="image main"><img src="images\IMG_3709-Edit.jpg" alt="Portfolio Picture" /></span>
-								<p>Below are my skills, work experience, and education. Click <a href="resume\Chris Wernli's Resume.pdf" download="Chris Wernli's Resume">here</a> to download my full resume.</p>
+								<p>Below are my skills, work experience, and education. Click <a href="resume\Chris Wernli's Resume.pdf" download="Chris Wernli's Resume">here</a> to download my resume.</p>
 
 								<div class="experience">
 									<h3>Skills</h3>
@@ -87,13 +116,21 @@
 									<h3>Experience</h3>
 
 									<section class="resume">
+										<strong>Team Lead, Web developer</strong></br>
+										NewAge, Inc., American Fork, Utah (January/2022-January/2022)
+										<ul>
+											<li>Develop new features, integrate APIs, and fix high-priority bugs in our web applications using Vue, Laravel, Perl, SQL,	Angular, Node, and jQuery.</li>
+											<li>Manage a team of four other developers by assigning tasks, mentoring, reviewing code, and running Agile meetings.</li>
+											<li>Interview and hire new developers.</li>
+										</ul>
+									</section>
+									<section class="resume">
 										<strong>Full Stack Web developer</strong></br>
-										NewAge, Inc., American Fork, Utah (February/2021-Present)
+										NewAge, Inc., American Fork, Utah (February/2021-January/2022)
 										<ul>
 											<li>Helped build the new company website that combined multiple companies into a single site that services many global markets using Vue, Laravel, SCSS, PHP, JavaScript, HTML, and Perl. <a href="https://newage.com/" target="_blank">newage.com</a></li>
 											<li>Helped create the new enrollment application.</li>
-											<li>Build new features for different global markets.</li>
-											<li>Maintain both backend and frontend code and fix any issues that arise.</li>
+											<li>Maintained both backend and frontend code and fixed any issues that arose.</li>
 											<li>Assist team with code reviews before deployment.</li>
 											<li>Fixed, cleaned up code, deployed, and created new features for a company web application using Angular 6, JavaScript, CSS, Node.js, and MongoDB. <a href="https://slenderiiz-challenge.com/" target="_blank">slenderiiz-challenge.com</a></li>
 											<li>Prepared MongoDB database for the deployment of Slenderiize challenge website.</li>
@@ -101,7 +138,7 @@
 									</section>
 									<section class="resume">
 										<strong>Freelance Web developer</strong></br>
-										Create Room (December/2020-Present)
+										Create Room (December/2020-November/2021)
 										<ul>
 											<li>Created a new home page for Spotify website using Javascript, JQuery, CSS, HTML, and liquid. <a href="https://www.createroom.com/" target="_blank">createroom.com</a></li>
 											<li>Connected third party API (Bread) for estimating finance payments.</li>
@@ -164,6 +201,14 @@
 								<span class="image main"><img src="images\code-2620118_1920.jpg" alt="Computer Programming" /></span>
 								<p>Below are some of the recent projects that I've been working on. These projects are meant to showcase different web development/coding skills like design, responsiveness, user friendliness, and problem solving.</p>
 								<ul class="portfolio-links">
+									<h4>Professional Full Stack Project</h4>
+									<li><a href="https://newage.com">Newage.com</a></li>
+										<ul class="project-description">
+											<li>The company website for NewAge. It's a retail site where customers can also sign up to be brand partners to help sell the product. The site supports multiple locales and has an enrollment section for customers to become brand partners.<strong>Vue | Laravel | MySQL | Perl | JavaScript | PHP | SCSS.</strong></li>
+											<li>Built the product page, shop page, most of the home page, and many corporate pages.</li>
+											<li>Help maintain both frontend and backend code and continue to implement new features.</li>
+										</ul>
+
 									<h4>Full Stack Project</h4>
 									<li>Workout Tracker - <a href="https://github.com/Lambda-School-Labs/workout-tracker-fe">GitHub Frontend Link</a>, <a href="https://github.com/Lambda-School-Labs/workout-tracker-be">GitHub Backend Link</a></li>
 										<ul class="project-description">
@@ -206,7 +251,7 @@
 							<article id="contact">
 								<h2 class="major">Contact</h2>
 								<p>You can email me at chris.wernli@hotmail.com or you can fill out the form below.</p>
-								<form method="POST" action="https://formspree.io/maypjoee">
+								<form method="POST" action="https://formspree.io/maypjoee" id="contact-form">
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
@@ -222,7 +267,14 @@
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
+										<li><input 
+											type="submit" 
+											value="Send" 
+											class="primary g-recaptcha" 
+											data-sitekey="6Ldee1MkAAAAAKm6idq0AnxUZIp2w7mp5e3v3DS3"
+											data-callback='onSubmit'
+											data-action='submit'
+										/></li>
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 								</form>
