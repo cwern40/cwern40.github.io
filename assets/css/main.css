@@ -1635,6 +1635,18 @@ input, select, textarea {
 
 		}
 
+		.email-message {
+			display: none;
+		}
+
+		#email-success {
+			color: #4BB543;
+		}
+
+		#email-fail {
+			color: #FC100D;
+		}
+
 /* Footer */
 
 	#footer {

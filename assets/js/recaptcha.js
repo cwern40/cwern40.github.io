@@ -1,4 +1,8 @@
 function onSubmit(token) {
+    $('#email-success').hide();
+    $('#email-fail').hide();
+    let form = document.getElementById('contact-form');
+
     $.ajax({
         url: 'https://www.google.com/recaptcha/api/siteverify',
         headers: {
@@ -10,11 +14,19 @@ function onSubmit(token) {
             response: token
         }
     }).done((data) => {
-        console.log('data',data)
-        if (data.score > .4) {
-            $.post('https://formspree.io/maypjoee', $('#contact-form').serialize());
+        if (data.score > .5) {
+            $.post('https://formspree.io/maypjoee', $('#contact-form').serialize())
+            .done(() => {
+                $('#email-success').show();
+                form.reset();
+            }).fail(() => {
+                $('#email-fail').show();
+                form.reset();
+            });
         } 
     }).fail((error) => {
         console.error(error);
+        $('#email-fail').show();
+        form.reset();
     })
 }
