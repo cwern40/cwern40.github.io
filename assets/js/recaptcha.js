@@ -1,4 +1,6 @@
 function onSubmit(token) {
+    const prod = true;
+    const url = prod ? 'https://cwern-portfolio-backend.cyclic.app' : 'http://localhost:4000';
     $('#email-success').hide();
     $('#email-fail').hide();
     let form = document.getElementById('contact-form');
@@ -13,29 +15,24 @@ function onSubmit(token) {
     })
 
     if (fail) {
-        let failMessage = `Please fill out all required fields. One or more sections are blank: ${failedInputs.join(', ')}`;
+        let failMessage = `Please fill out all required fields. The follow section(s) are blank: ${failedInputs.join(', ')}`;
         alert(failMessage);
     } else {
-        $.ajax({
-            url: 'https://www.google.com/recaptcha/api/siteverify',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            method: 'POST',
-            data: {
-                secret: "6Ldee1MkAAAAAHUGBlDuH7Gm4R04Y_nQumkXsi1S",
-                response: token
-            }
-        }).done((data) => {
-            if (data.score > .5) {
-                $.post('https://formspree.io/maypjoee', $('#contact-form').serialize())
-                .done(() => {
-                    $('#email-success').show();
-                    form.reset();
+        $.post(`${url}/api/recaptcha/verify`, { token: token }).done((data) => {
+            if (data.success && !data.bot) {
+                $.post(`${url}/api/email/send`, $('#contact-form').serialize())
+                .done((data) => {
+                    if (data.success) {
+                        $('#email-success').show();
+                        form.reset();
+                    } else {
+                        $('#email-fail').show();
+                    }
                 }).fail(() => {
                     $('#email-fail').show();
-                    form.reset();
                 });
+            } else {
+                $('#email-fail').show();
             }
         }).fail((error) => {
             console.error(error);
