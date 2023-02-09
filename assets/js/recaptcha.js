@@ -18,26 +18,16 @@ function onSubmit(token) {
         let failMessage = `Please fill out all required fields. The follow section(s) are blank: ${failedInputs.join(', ')}`;
         alert(failMessage);
     } else {
-        $.post(`${url}/api/recaptcha/verify`, { token: token }).done((data) => {
-            if (data.success && !data.bot) {
-                $.post(`${url}/api/email/send`, $('#contact-form').serialize())
-                .done((data) => {
-                    if (data.success) {
-                        $('#email-success').show();
-                        form.reset();
-                    } else {
-                        $('#email-fail').show();
-                    }
-                }).fail(() => {
-                    $('#email-fail').show();
-                });
+        $.post(`${url}/api/email/send`, $('#contact-form').serialize())
+        .done((data) => {
+            if (data.success) {
+                $('#email-success').show();
+                form.reset();
             } else {
                 $('#email-fail').show();
             }
-        }).fail((error) => {
-            console.error(error);
+        }).fail(() => {
             $('#email-fail').show();
-            form.reset();
-        })
+        });
     }
 }
