@@ -1,6 +1,6 @@
 function onSubmit(token) {
     const prod = true;
-    const url = prod ? 'https://cwern-portfolio-backend.cyclic.app' : 'http://localhost:4000';
+    const url = prod ? 'https://portfolio-backend-taupe-kappa.vercel.app' : 'https://portfolio-backend-taupe-kappa.vercel.app/';
     let form = document.getElementById('contact-form');
     var $inputs = $('#contact-form :input');
     let fail = false;
