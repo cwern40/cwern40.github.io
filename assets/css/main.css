@@ -749,7 +749,8 @@ input, select, textarea {
 			}
 
 			ul.columns li.three {
-				width: 32%;
+				width: 33%;
+				padding: 0 18px 0 .5em;
 			}
 			
 			ul.columns li.two {
