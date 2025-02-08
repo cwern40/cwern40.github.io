@@ -1,6 +1,6 @@
 function onSubmit(token) {
     const prod = true;
-    const url = prod ? 'https://portfolio-backend-seven-bice.vercel.app/' : 'http://localhost:4000';
+    const url = prod ? 'https://portfolio-backend-seven-bice.vercel.app' : 'http://localhost:4000';
     let form = document.getElementById('contact-form');
     var $inputs = $('#contact-form :input');
     let fail = false;
