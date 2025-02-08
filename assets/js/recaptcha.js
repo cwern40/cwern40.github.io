@@ -1,6 +1,6 @@
 function onSubmit(token) {
     const prod = true;
-    const url = prod ? 'https://portfolio-backend-taupe-kappa.vercel.app' : 'https://portfolio-backend-taupe-kappa.vercel.app/';
+    const url = prod ? 'https://portfolio-backend-seven-bice.vercel.app/' : 'http://localhost:4000';
     let form = document.getElementById('contact-form');
     var $inputs = $('#contact-form :input');
     let fail = false;
@@ -22,19 +22,28 @@ function onSubmit(token) {
         $('.lds-default').show();
         $('.actions').hide();
         
-        $.post(`${url}/api/email/send`, $('#contact-form').serialize())
-        .done((data) => {
-            if (data.success) {
-                $('#email-success').show();
-                form.reset();
-            } else {
+        $.ajax({
+            url: `${url}/api/email/send`,
+            type: 'POST',
+            data: $('#contact-form').serialize(),
+            headers: {
+                'Access-Control-Allow-Origin': '*'
+            },
+            success: (data) => {
+                if (data.success) {
+                    $('#email-success').show();
+                    form.reset();
+                } else {
+                    $('#email-fail').show();
+                }
+            },
+            error: () => {
                 $('#email-fail').show();
+            },
+            complete: () => {
+                $('.lds-default').hide();
+                $('.actions').show();
             }
-        }).fail(() => {
-            $('#email-fail').show();
-        }).always(() => {
-            $('.lds-default').hide();
-            $('.actions').show();
         });
     }
 }
