@@ -747,11 +747,6 @@ input, select, textarea {
 				display: flex;
 				flex-wrap: wrap;
 			}
-
-			ul.columns li.three {
-				width: 33%;
-				padding: 0 18px 0 .5em;
-			}
 			
 			ul.columns li.two {
 				width: 50%;
@@ -1648,6 +1643,10 @@ input, select, textarea {
 
 		#email-fail {
 			color: #FC100D;
+		}
+
+		.skills {
+			margin: 0 0 2rem;
 		}
 
 /* Footer */
